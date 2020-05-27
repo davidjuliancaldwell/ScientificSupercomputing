@@ -1,0 +1,17 @@
+TITLE:
+	This is the README for assignment #7 for astro 598 monte carlo methods
+
+SYNOPSIS:
+	In the provided folder is the python file to generate the plots of interest, as well as print the slope. 
+
+	In order to run this on Hyak, first obtain an interactive session qsub -I -V. 
+	Load anaconda via 
+	>> module load anaconda_2.3
+
+	Then, run the program and visualize the plots and slope as follows:
+	>> python hw7.py 
+
+	The slope found is approximately 0.83 for part c. 
+	
+AUTHOR:
+	David Caldwell

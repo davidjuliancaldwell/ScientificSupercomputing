@@ -1,0 +1,10 @@
+#!/bin/sh
+#PBS -N "hw8_job"
+#PBS -d/gscratch/gridlab/djcald/astro598/hw8
+#PBS -l nodes=1:ppn=16,mem=22gb,walltime=00:10:00
+#PBS -M djcald@u.washington.edu
+#PBS -m abe
+
+module load matlab_2015b
+
+matlab -nosplash -nodisplay -r hw_8parallel

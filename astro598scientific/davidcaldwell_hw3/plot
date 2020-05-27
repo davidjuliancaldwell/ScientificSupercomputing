@@ -1,0 +1,23 @@
+#!/bin/python
+
+import numpy as np
+import matplotlib.pyplot as pl
+
+x = [10**6, 10**7, 10**8]
+
+yPython = np.array([[0.1, 0.09, 0.06],[0.59, 0.54, 0.59],[2822.75, 2785.21, 2588.45]])
+yC = np.array([[0.00,0.01,0.00],[0.00, 0.01, 0.01],[0.28, 0.23, 0.20]])
+
+yPythonMean = np.mean(yPython,axis=1)
+yCMean = np.mean(yC,axis=1)
+
+pl.loglog(x,yPythonMean,label='Python runtime')
+pl.loglog(x,yCMean,label ='C runtime')
+
+pl.title('Runtime for findodd for Python and C programs')
+pl.xlabel('log Dataset size')
+pl.ylabel('log Runtime (seconds)')
+
+pl.legend()
+
+pl.show()

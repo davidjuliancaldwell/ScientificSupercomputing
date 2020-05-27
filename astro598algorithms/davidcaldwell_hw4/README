@@ -1,0 +1,26 @@
+INSTRUCTIONS
+    These are instructions to use myprogram.py and priorityQueue.py
+    Change to the working directory where myprogram.py and queue.py are located.
+    Ensure #!/usr/bin/python in the beginning of the program  points to an appropriate python installation on Hyak
+    Obtain an interactive hyak session via qsub -I
+    Once on a compute node, run the program as ./myprogram.py
+    If there are issues running the program, make sure there are executable permissions on the file.
+    This can be done with chmod +x myprogram.py to add executable permissions.
+    If an error of python^M: bad interpreter comes about, it could be an issue with
+    the format of the file for unix. Do dos2unix myprogram.py to make sure it is in
+    appropriate format for Hyak.
+    This program initializes a blank queue, with the following methods:
+    .put(i)
+    .get()
+    .front()
+    .size()
+    .isEmpty()
+
+    Ten random integers between 1 and 10000 are put onto the queue. 
+    The program then gets an integer off the stack and prints it.
+    These integers are printed in the SAME order in which they 
+    were put onto the queue. This is in contrast to a stack, where they are 
+    taken in REVERSE order. 
+
+AUTHOR
+    David Caldwell

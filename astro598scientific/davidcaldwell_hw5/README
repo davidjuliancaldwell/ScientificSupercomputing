@@ -1,0 +1,19 @@
+Why the need for wait command?
+	We need to issue the wait command to serve as a barrier in parallel
+	computing in order to make sure that each call to the sumrange function 
+	completes before the reducesumrange function is called. If this were not
+	the case, and reducesumrange was called before all of the sumrange
+	executions were complete, the program would fail upon trying to open,
+	read, and compute the necessary sum from all of the output files
+	from the sumrange functions
+How to runsumrange, reducesumrange, myscript.pbs
+	All files (runsumrange, reducesumrange, myscript.pbs) must be in the
+	designated working directory (in this case
+	/gscratch/gridlab/djcald/astro598). The calls to the python functions
+	in myscript.pbs are preceded by ./ , and the #!/usr/bin/python at the 
+	beginning of the python call functions must point to python for 
+	the functions to be carried out. 
+
+	the function is called by 
+	qsub myscript.pbs
+	The output file is created in the same working directory

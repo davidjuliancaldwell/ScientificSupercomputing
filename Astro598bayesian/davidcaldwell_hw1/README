@@ -1,0 +1,44 @@
+TITLE:
+  This is the README for assignment #1 for astro 598 bayesian statistics
+
+SYNOPSIS:
+  In the provided folder is the python script to be run on hyak (hw_script.py),
+  the module and functions called by the script (coinflip.py), as well as the
+  plots to answer part A, B, C. Each plot is labelled by its p, N, and M value,
+  as follows histogram_p_VAL_N_VAL_M_VAL
+
+  In order to run this on Hyak, first obtain an interactive session with X11
+  forwarding
+  > qsub -I -V
+
+  Load anaconda via
+  > module load anaconda3_4.2
+
+  Run the script
+  > python ./hw_script.py
+
+  Limitations: finicky histogram plotting with bin sizing
+
+README ANSWERS:
+
+Part a)
+The name of the probability distribution of heads is the binomial distribution.
+See histogram_p_0.2_N_1000_M_5000
+
+Part b)
+
+Choice of M = 1000
+The histogram starts to look "good" and like the binomial distribution around
+M = 1000.
+
+See histogram_p_0.3_N_(8,16,32,64,128)_M_1000
+
+Part c)
+
+As N increases, the histogram starts looking like a Gaussian distribution
+
+See histogram_p_0.3_N_(10,100,1000,10000)_M_1000
+
+AUTHOR:
+  David Caldwell
+# David Caldwell - Astro 598 - Bayesian Statistics - HW1 Readme

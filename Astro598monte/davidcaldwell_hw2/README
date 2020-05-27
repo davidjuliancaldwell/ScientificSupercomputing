@@ -1,0 +1,25 @@
+TITLE:
+	This is the README for assignment #2 for astro 598 monte carlo methods
+
+SYNOPSIS:
+	In the provided folder is the python file to generate the plots of interest,
+	as well as the 4 plots of interest. Two cases are considered for the Gaussian PDF 
+	and the Poisson PDF. One is  where the total number of points is 10**6, and the
+	other is where the total number of points is 100. The library functions from numpy
+	for the normal and poisson distribution are used to generate a set number of points,
+	which are visualized using a histogram of unit bin size. Superimposed on each of these
+	cases is the function N*P(n) for the Poisson distribution, and N*P(x) for the Gaussian
+	distribution.
+
+	Of interest is that for a large number of points (N = 10**6), the histograms and N*P(N)
+	or N*P(x) very closely match. For small N's, there is less similarity.
+
+	In order to run this on Hyak, first obtain an interactive session qsub -I -V. 
+	Load anaconda via 
+	>> module load anaconda_2.3
+
+	Then, run the program and visualize the plots as follows:
+	>> python hw2.py 
+
+AUTHOR:
+	David Caldwell

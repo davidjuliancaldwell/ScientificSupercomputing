@@ -1,0 +1,46 @@
+NAME
+	generatelist
+	sortlist
+
+SYNOPSIS
+	./generatelist n
+	./sortlist n
+
+	n is the number of numbers to be generated or read in
+	./ indicates the path in Unix for the file to be run
+
+DESCRIPTION
+	Given n as input to generatelist, n random integers between
+	1 and 100 will be generated. This can be piped via | in the 
+	Unix command line to sortlist, which will then sort n number 
+	of the integers piped into it. This can then be piped via |
+	into the unix command uniq to print out (stdout) the uniq 
+	integers, in sorted order, from sortedlist
+
+	sortlist can also have input from stdin. If there exists a file
+	with integers in it on each line e.g.
+	1
+	3
+	4
+	5
+
+	then, cat filename | ./sortlist n will sort n integers from the
+	list
+
+ENVIRONMENT
+	Requires python
+
+BUGS
+	must be run with ./ in front of generatelist and sortlist
+	python must be in #!/bin/python. otherwise, the user should 
+	alter this line for their own use
+
+	if the n given to generatelist is smaller than the n given to
+	sortlist, ./generatelist 5 | ./generatelist 10, then only 5 
+	will be printed from generatelist
+
+AUTHOR
+	Written by David Caldwell
+
+
+

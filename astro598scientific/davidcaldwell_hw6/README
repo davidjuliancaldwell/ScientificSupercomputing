@@ -1,0 +1,12 @@
+INSTRUCTIONS 
+	These are the instructions to run sumrange, reducesumrange, and myscript.pbs. 
+	
+	sumrange, reducesumrange, and myscript.pbs, and myworkfile  should exist in the working directory on the cluster. Python should be installed. "makemyworkfile"
+	is a python script that can be run by ./makemyworkfile to generate the "myworkfile" text file that is required for myscript.pbs. 
+
+	The myscript.pbs should be submitted as "qsub myscript.pbs". The script requires pointing to the correct hyak group and user, as well as 16 core nodes. If 8 or 12
+	node cores are required, this must be changed. 
+
+
+AUTHOR
+	David Caldwell

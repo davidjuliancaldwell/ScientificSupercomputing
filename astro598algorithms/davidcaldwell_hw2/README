@@ -1,0 +1,30 @@
+INSTRUCTIONS
+    These are instructions to use linkedlist.py and myprogram.py
+    Change to the working directory where linkedlist.py and myprogram.py are located
+    Ensure #!/usr/bin/python in the beginning of the program  points to an appropriate python installation on Hyak
+    Obtain an interactive hyak session via qsub -I
+    Once on a compute node, run the program as ./myprogram.py
+    This program initializes an empty blank list, and proceeds to insert 3 values at the head.
+    The program then deletes one value at the head, and then inserts 3 values at the tail.
+    The program displays the values which are inserted or deleted after each iteration.
+    There are additional methods for linkedlist.py - refer to the linkedlist.py class for details
+
+QUESTION TO ANSWER 
+    Why don't we have a part with the corresponding idea - 
+
+    //the function returns the integer corresponding to the node which was
+    deleted 
+    public int delete_at_tail();   
+
+    This program is not implemented because of the computational complexity 
+    which would be required in a singly linkedlist as implemented in this program
+    The insert_at_head, insert_at_tail, and delete_at_head are of O(1) complexity.
+    Deleting at the tail would require O(n) complexity because of the self 
+    referencing structure of traversing the list. If there were a million 
+    elements, we would have to traverse a million nodes before we arrived at the
+    tail to delete. This could be solved by the implementation of a doubly 
+    linked list.    
+
+AUTHOR
+    David Caldwell
+

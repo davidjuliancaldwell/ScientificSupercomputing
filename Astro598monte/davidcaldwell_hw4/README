@@ -1,0 +1,25 @@
+TITLE:
+	This is the README for assignment #4 for astro 598 monte carlo methods
+
+SYNOPSIS:
+	In the provided folder is the python file (hw4.py) to generate the plots of interest,
+	as well as a plot. The problem considered is that of doing Monte Carlo integration
+    for a 4-D sphere of unit radius for various number of Monte Carlo points, 
+    and seeing how that affects the accuracy of the integration. 
+
+	The numpy  uniform random number generator is employed. 10^6,10^7,10^8,and 10^9
+    points are considered. The monte carlo integration is run 10 times for each
+    number of points, and the average and standard deviation from these 10 runs
+    are computed for each set of N points. A plot with error bars is then created.
+
+	In order to run this on Hyak, first obtain an interactive session with 
+	> qsub -I -V
+
+	Load anaconda via
+	> module load anaconda_2.4
+
+	Then, run the program and visualize the plots as follows:
+	> python ./hw4.py 
+
+AUTHOR:
+	David Caldwell

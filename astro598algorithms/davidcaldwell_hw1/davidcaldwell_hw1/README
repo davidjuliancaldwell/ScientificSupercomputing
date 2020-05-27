@@ -1,0 +1,10 @@
+INSTRUCTIONS
+    These are instructions to use myparticle.py, and myprogram.py
+    Change to the working directory where myparticle.py and myprogram.py are located
+    Ensure #!/usr/bin/python points to an appropriate python installation on Hyak
+    Obtain an interactive hyak session via qsub -I
+    Once on a compute node, run the program as ./myprogram.py
+    The force between two particles as defined in myparticle.py will be computed and printed to standard output on the Hyak terminal
+
+AUTHOR
+    David Caldwell 

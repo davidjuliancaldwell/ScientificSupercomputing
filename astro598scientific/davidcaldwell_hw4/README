@@ -1,0 +1,29 @@
+NAME
+	sumall
+
+SYNOPSIS
+	./sumall
+	./ indicates the path in Unix for the file to be run
+
+DESCRIPTION
+	./sumall 
+	sumall sums all integers from 1 to MAX (inclusive). A file
+	checkpoint.out is created where each newline contains all of the
+	intermediate values of the index variable i and the partial sum to 
+	that point, where i is divisble by 2. 
+
+	When run, sumall checks to first see if there is a existing file
+	named checkpoint.out. If checkpoint.out exists, it is opened and 
+	appended to. If it does not exist, it is created. The program has a
+	one second delay in each iteration of its sum loop, and is able
+	to be interrupted and restarted.
+
+ENVIRONMENT
+	requires python (looks in #!/bin/python)
+	requires sumall python file in current working directory
+
+BUGS
+	none known at this time
+
+AUTHOR
+	David Caldwell

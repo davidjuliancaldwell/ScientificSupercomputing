@@ -1,0 +1,56 @@
+#!/bin/python
+
+import time  
+import os 
+
+
+fname = 'checkpoint.out'
+fname = os.path.abspath(fname)
+
+
+if os.path.isfile(fname):
+    f = open(fname,'r+')
+    linelist = f.readlines()
+    f.close()
+
+    last = linelist[len(linelist)-1]
+    
+    lastSplit = last.split()
+    i1 = int(lastSplit[0])
+    sum1 = int(lastSplit[1])
+    
+    i = i1 + 1
+    sumNew = sum1
+    
+    maximum = 6000
+    NPRINT = 2
+    
+    f = open(fname,'a+')
+
+    while i < (maximum+1):
+        sumNew = sumNew + i
+        time.sleep(1)
+        
+        if i%NPRINT == 0:
+            f.write(str(i)+' '+str(sumNew) +'\n')
+        
+        i = i + 1
+        
+else:
+    f = open(fname,'w')
+        
+    maximum = 6000
+    sumNew = 0
+    i = 1
+    NPRINT = 2
+    
+    while i < (maximum+1):
+        sumNew = sumNew + i
+        time.sleep(1)
+        
+        if i%NPRINT == 0:
+            f.write(str(i)+' '+str(sumNew) +'\n')
+        
+        i = i + 1
+
+f.close()

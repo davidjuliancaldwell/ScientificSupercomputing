@@ -1,0 +1,35 @@
+OVERVIEW
+hw_8serial.m, this is the serial version of the program
+hw_8parallel.m, this is the parallel version of the program
+
+
+This program reads in an .wav audiofile (In this case 10 seconds of the War of 1812 Overture), and converts it into a format which can be analyzed in MATLAB (and also stores its sampling frequency). This audiofile is then resampled to a lower sampling rate and quantized, to simulate audio compression (this is important for storage formats such as .mp3 files). The quantized audio is then converted to the original sampling frequency (44100 Hz), and a delayed version of the original audio is compared to the quantized and resampled one. The error is calculated as the pointwise difference between the two. A minimum average error squared (simulating the average 'power' in a power spectral density estimation of the error) is desired, and this is found by running this analysis at various resampling rates, quantization steps, and bits (which allow for a certain number of quantization levels). The maximum bits/second allowed is 64000, and the design of any resampling, filtering, and quantization is subject to this constraint. A low pass filter is used to prevent aliasing, which was designed with the Parks-McClellan algorithm. 
+
+ENVIRONMENT
+This program is designed to be run on the Hyak cluster, with a myscript.pbs
+The program is run as follows
+qsub myscript.pbs
+
+In the myscript.pbs file, the version of the program to be run has to be specified. If the serial program is to be run, it needs to be specified in the myscript.pbs, and if the parallel program is to be run, this does as well (as follows)
+
+matlab -nosplash -nodisplay -r hw_8serial
+
+OR 
+
+matlab -nosplash -nodisplay -r hw_8parallel
+
+LIMITATIONS
+Requires MATLAB, parallel processing toolbox. The filetype to be read in must be a .wav, .flac, .mp3, .m4a, .mp4, .ogg, or a compressed WAVE file. L and M for upsampling, downsampling, and filtering must be chosen to allow for the Parks-McClellan algorithm in filter design to converge. 
+
+Part E
+This computation was "embarrasingly parallel". This is because there was no communication required between the parallel tasks. After the completion of the parfor MATLAB loop, the minimum value in a vector was found, but this was after all of the independent iterations were completed.
+
+In order to estimate P, Amdahl's law will be employed, with the speedup based off of the parallel and serial programs, and the number of cores used on hyak. The total time for the serial program was 10.4160. The total time for the parallel was 4.0086.
+Amdahl's law - S(N) = 1/((1-p)+(p/n))
+S(n) = 2.5984
+Assume 16 cores
+2.5984 = 1/((1-p)+(p/16))
+Solving for P here yields 0.6562, which is the fraction of the program that is currently able to be put into parallel.
+
+p here would change with the size of the problem. As the number of sampling rates used increased, or the size of the wavfile being processed increased, the fraction of the problem that would have benefited from a parallel implementation would have increased.
+

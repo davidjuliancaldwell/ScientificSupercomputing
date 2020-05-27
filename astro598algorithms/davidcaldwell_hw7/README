@@ -1,0 +1,27 @@
+INSTRUCTIONS:
+    These are instructions to use myprogram.py and a BinarySearchTree class.
+    Change to the working directory where myprogram.py, Node.py, and BinarySearchTree.py are located.
+    Ensure #!/usr/bin/python in the beginning of the program  points to an appropriate python installation on Hyak
+    Obtain an interactive hyak session via qsub -I
+    Once on a compute node, run the program as ./myprogram.py
+    If there are issues running the program, make sure there are executable permissions on the file.
+    This can be done with chmod +x myprogram.py to add executable permissions.
+    If an error of python^M: bad interpreter comes about, it could be an issue with
+    the format of the file for unix. Do dos2unix myprogram.py to make sure it is in
+    appropriate format for Hyak.
+    This program initializes a blank Binary Search Tree, with the following methods:
+    .insert(i)
+    .find(i)
+    .traverse()
+    .minBST
+    .maxBST
+    .size()
+    .isEmpty()
+    
+
+    One hundred random integers between 1 and 10000 are put into the Binary Search Tree. 
+    The program then uses the traverse method to traverse the Binary Search Tree.
+    These integers are printed in the SORTED ORDER.
+
+AUTHOR:
+	David Caldwell

@@ -1,0 +1,7 @@
+# Git ignore files for astro 598 classes #
+*.png
+.ipynb_checkpoints
+__pycache__
+*.tar
+davidcaldwell_hw3Extra
+*.mat

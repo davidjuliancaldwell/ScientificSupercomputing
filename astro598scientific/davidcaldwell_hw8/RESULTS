@@ -1,0 +1,85 @@
+c)
+Comparison of serial and parallel program output (example .txt output files are below)
+
+The Minimum Error for compression = 0.00013188 from both the serial and parallel programs.
+The sampling rate at which this occured was the same for each program, being equal to 11025Hz
+The outputs are the same for these two versions
+
+d)
+Comparison of serial and parallel program runtime (example .txt output files are below)
+
+SERIAL
+Serial only Runtime -
+2.193891s
+
+Part in Serial that could have been parallel
+8.222155s
+
+PARALLEL
+Serial only Runtime -
+1.305364s
+
+Parallel part - 
+2.703248s
+
+The parallel program ran faster than the serial program. This difference would be even more pronounced if more sampling rates were chosen for conversion and comparison (the ones listed in the files were chosen to facilitate small integer values for up and down sampling to ensure successful program output in filter design, filtering, up sampling, down sampling, and signal delay. This would have placed more of the program in the parallel portion. The input .wav file was 10 seconds long, and the speedup would be more pronounced for a longer input file.  
+
+EXAMPLE OUTPUT FROM SERIAL
+Sampling Rate Calculated Error
+31500.00   0.13098024
+29400.00   0.04190460
+26460.00   0.07626781
+25200.00   0.12699212
+24500.00   0.14202296
+22050.00   0.00394813
+19600.00   0.13878602
+18900.00   0.10658887
+17640.00   0.05531488
+14700.00   0.00027594
+12600.00   0.07704468
+11025.00   0.00013188
+9800.00   0.10121750
+8820.00   0.00016181
+7350.00   0.00028364
+6300.00   0.00044246
+4900.00   0.00065119
+MinError   0.00013188
+SampRateMin 11025.00000000
+Time Elapsed Parallel 8.222155e+00
+Time Elapsed Serial 2.193891e+00
+
+EXAMPLE OUTPUT FROM PARALLEL
+
+Sampling Rate Calculated Error
+31500.00   0.13098024
+29400.00   0.04190460
+26460.00   0.07626781
+25200.00   0.12699212
+24500.00   0.14202296
+22050.00   0.00394813
+19600.00   0.13878602
+18900.00   0.10658887
+17640.00   0.05531488
+14700.00   0.00027594
+12600.00   0.07704468
+11025.00   0.00013188
+9800.00   0.10121750
+8820.00   0.00016181
+7350.00   0.00028364
+6300.00   0.00044246
+4900.00   0.00065119
+MinError   0.00013188
+SampRateMin 11025.00000000
+Time Elapsed Parallel 2.703248e+00
+Time Elapsed Serial 1.305364e+00
+
+e) This computation was "embarrasingly parallel". This is because there was no communication required between the parallel tasks. After the completion of the parfor MATLAB loop, the minimum value in a vector was found, but this was after all of the independent iterations were completed.
+
+In order to estimate P, Amdahl's law will be employed, with the speedup based off of the parallel and serial programs, and the number of cores used on hyak. The total time for the serial program was 10.4160. The total time for the parallel was 4.0086.
+Amdahl's law - S(N) = 1/((1-p)+(p/n))
+S(n) = 2.5984
+Assume 16 cores
+2.5984 = 1/((1-p)+(p/16)) 
+Solving for P here yields 0.6562, which is the fraction of the program that is currently able to be put into parallel.
+
+p here would change with the size of the problem. As the number of sampling rates used increased, or the size of the wavfile being processed increased, the fraction of the problem that would have benefited from a parallel implementation would have increased. 

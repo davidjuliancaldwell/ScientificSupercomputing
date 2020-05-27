@@ -1,0 +1,25 @@
+#!/bin/sh
+#PBS -N "hw_job"
+#PBS -d/gscratch/gridlab/djcald/astro598algorithms/davidcaldwell_hw6
+#PBS -l nodes=1:ppn=16,mem=22gb,walltime=02:00:00
+#PBS -M djcald@u.washington.edu
+#PBS -m abe
+
+echo '' > timing.txt 
+
+(time ./myprogram 0) 2>> timing.txt
+(time ./myprogram 0) 2>> timing.txt
+(time ./myprogram 0) 2>> timing.txt
+
+(time ./myprogram 1) 2>> timing.txt
+(time ./myprogram 1) 2>> timing.txt
+(time ./myprogram 1) 2>> timing.txt
+
+(time ./myprogram 2) 2>> timing.txt
+(time ./myprogram 2) 2>> timing.txt
+(time ./myprogram 2) 2>> timing.txt
+
+(time ./myprogram 3) 2>> timing.txt
+(time ./myprogram 3) 2>> timing.txt
+(time ./myprogram 3) 2>> timing.txt
+

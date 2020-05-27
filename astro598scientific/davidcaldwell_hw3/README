@@ -1,0 +1,54 @@
+NAME
+	Homework Problem Set #3 Astro 598
+
+SYNOPSIS
+	Compare python time findodd with c compiled find odd
+
+DESCRIPTION
+	Use generatelist from HW2 to make three data sets
+	e.g. generatelist 1000000 > data1
+		data1 with 10^6 nums
+		data2 with 10^7 nums
+		data3 with 10^8 nums 
+	Rename all of these as input for findodd function from hw1 AFTER
+	putting them in separate directories
+		dataOne
+		dataTwo
+		dataThree
+
+	Run findodd, direct sys time (3rd number)  output to rawdata and append
+		(time ../../hw1/findodd) |& grep sys >> rawdata
+	Run c version
+		compile after changing MAX for data1, data2, data3
+		gcc -O3 -o findodd findodd.c
+		Move into file containing input
+		(time ./findodd) |& grep sys >> rawdata
+	
+	Manually combine all data files into one rawdata file in hw3 directory
+	Separate the python run times from the c run times
+	
+	Manually hardcode the values of the data into numpy arrays in python file
+	plot
+	
+	Run ./plot (assuming that the plot python program is in the current directory)
+	
+	Save plot output as .png file manually 
+ENVIRONMENT
+	Requires plot python file
+	Requires python
+	Requires matplotlib package
+	Requires numpy package 
+	Requires python to be localized as  #!/bin/python
+
+COMPARISON OF PERFORMANCE
+	The python program and the c program demonstrate a similar curve in algorithm
+	run time when viewed on a log log plot. However, the slope of the python program
+	runtime is steeper than that of the c runtime. The difference in runtimes is 
+	minimally noticable to the user for data set sizes of 10e6 numbers. However, 
+	for a data set size of 10e7 numbers, the difference becomes noticable to the user,
+	and for 10e8 numbers, the python program requires almost an hour of processing run
+	time, where the c program requires less than a minute, which is extremely noticable
+	to the user
+
+AUTHOR
+	David Caldwell

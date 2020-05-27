@@ -1,0 +1,15 @@
+#!/usr/bin/python
+import sys
+import fileinput
+
+n = sys.argv[1]
+m = sys.argv[2]
+k = sys.argv[3]
+
+sumFinal = sum(range(int(n),int(m)+1))
+
+fname = 'out.' + str(k)
+f = open(fname,'w')
+f.write(str(sumFinal))
+f.close()
+

@@ -1,0 +1,15 @@
+# This datafile summarizes the rawdata results from comparing the 
+# python code and compiled c code for the findodd algorithm. 
+# The leftmost number represents the dataset size, while the times
+# to the right represent the time reported by the unix time command
+# for the sys value in seconds 
+
+#python rawdata
+1000000 0.1 0.09 0.06  
+10000000 0.59 0.54 0.59
+100000000 2822.75 2785.21 2588.45 
+
+#c compiled rawdata
+1000000 0.00 0.01 0.00
+10000000 0.00 0.01 0.01
+100000000 0.28 0.23 0.20

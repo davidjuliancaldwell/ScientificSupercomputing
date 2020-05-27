@@ -1,0 +1,43 @@
+NAME
+	findodd.py - find odd and even numbers in an input file, save to even
+	and odd containing output files	
+
+SYNOPSIS
+	python findodd.py
+	Requires an input file in same directory with one number given per line
+
+DESCRIPTION
+	Given an input file with a number on each line, findodd.py creates two
+	output files, one containing all of even numbers in the input file, and
+	one containing all of the odd numbers in the input file. The output file
+	are formatted as a python list on a single line, with the numbers 
+	formatted as strings.
+
+	e.g.
+	Input
+	1
+	2
+	3
+	4
+
+	Output
+	
+	Odds
+	['1','3']
+	Evens
+	['2','4']
+
+	Program can handle positive and negative numbers
+	Program requires individual integers on each line.
+
+ENVIRONMENT
+	Requires input file in same directory that the program is run in
+	Requires python
+
+BUGS
+	Program returns values for non-integers (real numbers such as 3.14, etc
+	and will classify them as odd. However, this is incorrect as even and 
+	odd numbers have to be integers 
+
+AUTHOR
+	Written by David Caldwell

@@ -1,0 +1,26 @@
+TITLE:
+	This is the README for assignment #3 for astro 598 monte carlo methods
+
+SYNOPSIS:
+	In the provided folder is the python file (hw3.py) to generate the plots of interest,
+	as well as two plots. The two problems considered are generating random numbers from 
+	a Poisson distribution using the rejection method and a uniform random number generator,
+	and generating random numbers for a Gaussian distribution using the Box-Muller method
+	and a uniform random number generator. 
+
+	The numpy  uniform random number generator is employed. 10^6 Points are considered, and
+	of note is the close matching between the histograms with unit bin width containing the 
+	random numbers generated and the total number of points * the probability density 
+	functions. 
+
+	In order to run this on Hyak, first obtain an interactive session with 
+	> qsub -I -V
+
+	Load anaconda via
+	> module load anaconda_2.4
+
+	Then, run the program and visualize the plots as follows:
+	> python ./hw3.py 
+
+AUTHOR:
+	David Caldwell

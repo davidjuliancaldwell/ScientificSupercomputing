@@ -1,0 +1,17 @@
+#!/usr/bin/python
+import sys
+import fileinput
+
+p = int(sys.argv[1])
+q = int(sys.argv[2])
+
+files = ['out.'+str(x) for x in range(p,q+1)]
+
+sumTotal = 0
+
+for line in fileinput.input(files):
+    sumTotal = sumTotal + int(line)
+
+outputFile = open('out.final','w')
+outputFile.write(str(sumTotal))
+outputFile.close()

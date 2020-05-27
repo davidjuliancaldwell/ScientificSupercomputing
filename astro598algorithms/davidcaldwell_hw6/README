@@ -1,0 +1,31 @@
+README
+    Required: mergeSort.py , myprogram.py, myscript.pbs, myplot.py
+
+    These are instructions to run a python program which calls a mergesort 
+    function on an array of N random integers to sort them. This program 
+    generates 10^2, 10^4, 10^6, and 10^8 random integers between 1 and 10000, 
+    depending on the command line input in unix when the function is called.
+
+    For instance ./myprogram 0, (where python is in the path #!/usr/bin/python)
+    generates 10^2 numbers and sorts them, ./myprogram 1 does 10^4,
+    ./myprogram 2 does 10^6, ./myprogram does 10^8. 
+
+    In order to efficiently run and implement three runs to average for each 
+    of these cases, a myscript.pbs workscript for submission to hyak was 
+    created. Assuming the user has set up the initial working directory, and 
+    other PBS script arguments, the PBS script uses the output from the time
+    command in linux, and writes the result to a timing.txt file.
+
+    The PBS script is submitted with qsub myscript.pbs, once a user is on Hyak.
+
+    The user time reported by this command in the text file was then manually
+    imported in myplot.py, where a loglog scatterplot of the running time 
+    (in seconds) compared to N log N was created.
+
+    This plot demonstrates the O(N log(N) ) efficiency of the mergesort 
+    algorithm as N increases. For small N, the I/O time and other system 
+    processes may make for no difference in run times.
+
+AUTHOR
+	David Caldwell
+	ASTRO 598 Algorithms

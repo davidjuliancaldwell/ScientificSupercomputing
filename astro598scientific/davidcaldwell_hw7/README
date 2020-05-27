@@ -1,0 +1,39 @@
+b) Taking the limit of S(n) as n approaches infinity yields the theoretical
+maximum expected speed up for various values of p (fraction of the program 
+which would benefit from a parallel implementation 
+For p = 0.5, this is 2x
+For p = 0.6, this is 2.5x
+For p = 0.7, this is 3.33x
+For p = 0.8, this is 5x
+For p = 0.9, this is 10x
+For p = 0.95, this is 20x
+
+We will consider the approximate number of processors to achieve a value close  to the theoretical limit. We will consider the approximate number of processors required when S(n) approaches 95% of its maximal value 
+
+p = 0.5, n approx = 18
+p = 0.6, n approx = 28
+p = 0.7, n approx = 44
+p = 0.8, n approx = 75
+p = 0.9, n approx = 170
+p = 0.95, n approx = 358
+
+
+c) p = 1 indicates a case where a problem is where the entire program's running
+time could benefit from a parallel implementation. The formula for S(n) in 
+this case is S(n) = n, which means that there is a 1:1 linear relationship
+between the number of processors and the speed up in run time. 
+
+d) the asymptoptic value of the speedup S(n) as n approaches infinity is 1/(1-p)
+As shown in part b, this yields different values of maximum speedup that dependson the portion of the problem that is able to benefit from a speedup with 
+parallel implementation. 
+
+e) Gustafson's insight that by increasing the size of the problem (which we 
+will consider to be the number of computations we are performing in our 
+parallel part), that we can inrease p, which then gives us a higher 
+asymptoptic value for the speed up. By applying this to HW5, we see that that
+we should increase our problem size (maximum value of m fed into sumrange 
+function , in order to have more of our computing time being spent on the
+parallel computation part, rather than the serial part. It is "better",
+according to Gustafson, to use a parallel implementation for a larger maximum
+value up to which we wish to sum using the parallel divisions of sumrange.
+(m should be 32000,64000,128000,etc, rather than 16,32,64). 

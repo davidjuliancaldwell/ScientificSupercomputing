@@ -1,0 +1,24 @@
+Sing: desired stim waveform current (uA)
+Stim: 4 channels of the stim output; for 3x3 experiment we used 3 output channels, so the first 3 channels are the active and the 4th is 0
+Stm0: Slow store of the pulse amp and pulse width
+Wave: ECoG stored at 1525.9 Hz
+
+Experimental set-up:
+
+Active electrodes: 20, 28, 36 (see electrode numbers on recon in Images folder)
+**** Note: unfortunately we are not sure of the order that we plugged in these electrodes to the stim headstage.
+           That is, electrode 20 may not correspond to Ch. 1 of the Stim variable. It probably does, but we forgot to record this.  
+Ground electrodes: 22, 30, 38
+
+Trials:
+3x3-1
+Looks like dead battery, will try and charge it for 5 minutes 
+Unplugged from stim box, charging 
+
+3x3-2
+Charged for several minutes, battery seems to have low charge
+1000 uA , each electrode (3 channels of stimulation) 
+Pulse phase duration/width = 1 ms
+1.182 seconds apart 
+2.0 ms pulse trains 
+60 pulses 

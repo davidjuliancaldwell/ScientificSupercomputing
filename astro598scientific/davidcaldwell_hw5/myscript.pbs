@@ -1,0 +1,26 @@
+#!/bin/sh
+#PBS -N "hw_job"
+#PBS -d/gscratch/gridlab/djcald/astro598
+#PBS -l nodes=1:ppn=16,mem=22gb,walltime=00:10:00
+#PBS -M djcald@u.washington.edu
+#PBS -m abe
+
+./sumrange 1 1000 1 &
+./sumrange 1001 2000 2 &
+./sumrange 2001 3000 3 &
+./sumrange 3001 4000 4 &
+./sumrange 4001 5000 5 &
+./sumrange 5001 6000 6 &
+./sumrange 6001 7000 7 &
+./sumrange 7001 8000 8 &
+./sumrange 8001 9000 9 &
+./sumrange 9001 10000 10 &
+./sumrange 10001 11000 11 &
+./sumrange 11001 12000 12 &
+./sumrange 12001 13000 13 &
+./sumrange 13001 14000 14 &
+./sumrange 14001 15000 15 &
+./sumrange 15001 16000 16 &
+wait
+./reducesumrange 1 16
+

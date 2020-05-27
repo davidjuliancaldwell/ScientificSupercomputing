@@ -1,0 +1,10 @@
+#!/bin/sh
+#PBS -N "hw_job"
+#PBS -d/gscratch/gridlab/djcald/astro598/hw6
+#PBS -l nodes=1:ppn=16,mem=22gb,walltime=00:10:00
+#PBS -M djcald@u.washington.edu
+#PBS -m abe
+
+cat myworkfile | parallel -j 16
+./reducesumrange 1 160
+

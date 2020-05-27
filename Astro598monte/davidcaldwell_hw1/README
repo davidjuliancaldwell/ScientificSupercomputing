@@ -1,0 +1,51 @@
+TITLE:
+	This is the README for assignment #1 for astro 598 monte carlo methods
+SYNOPSIS:
+	In the provided folder are a number of functions, plots, and functions to 
+	recreate the analysis shown. the poissonPDF.py and gaussianPDF.py functions
+	are respectively the  probability mass function, and probability distribution function
+	, for the discrete poisson distribution and the continuous gaussian distribution.
+	CumulativePoisson and CumulativeGaussian are the cumulative distribution functions.
+	All four were verified against the scipy implementations for accuracy. 
+
+	To run both problem 1 and problem 2 on Hyak, navigate to the directory of interest on
+	Hyak. Acquire an interactive session with qsub -I . Run the scripts as:
+
+	the functions provided run as follows 
+	
+	Load python:
+	>>python
+	
+	Import modules:
+	
+	import CumulativeGaussian
+	import poissonPDF
+
+	Utilize the functions
+
+	poissonPDF.poissonPDF(3,4)
+	CumulativeGaussian(3,4,5)
+
+
+
+PROBLEM 1:
+	(c): The meaning of CumulativePoisson(lambda,m1)-CumulativePoisson(lambda,m2), assuming
+	m1 to be greater than m2, is the probability that X lies in the closed interval between 
+	m1 and m2
+
+	(d): The approximate value of CumulativePoisson(lambda,int(100*lambda)), would be 1.
+	This is because as one goes past 3*lambda, the CDF is greater than 0.99. 
+
+	(e) The meaning of 1 - CumulativePoisson(lambda,m) is the probability of getting a 
+	value n which is GREATER than m.
+
+	(f) Lambda is known as the event rate, or the rate parameter (wikipedia). Lambda is the
+	average number of events in a given interval. Lambda is also the epxected value and 
+	variance for a poisson distribution 
+
+PROBLEM 2:
+	(c): mu is the mean (or expected value of the distribution). Sigma is the standard 
+	deviation of the distribution, while sigma^2 is the variance. 
+
+AUTHOR:
+	David Caldwell 
